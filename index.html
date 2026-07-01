@@ -40,13 +40,15 @@
     </div>
 
     <script>
-        const emoji = "🚜";
-        const text = " пассат уёбывает с рыбинска ";
-        let fullText = emoji + text;
+        const text = " 🚜 пассат уёбывает с рыбинска ";
+        let charArray = [...text];;
         
         setInterval(() => {
-            fullText = fullText.substring(1) + fullText.substring(0, 1);
-            document.title = fullText;
+            const first = charArray.shift();
+            charArray.push(first);
+            const second = charArray.shift();
+            charArray.push(second);
+            document.title = charArray.join('');
         }, 300);
 
         document.addEventListener('copy', (e) => {
