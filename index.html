@@ -2,9 +2,28 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>упс</title>
+    <title>🚜 пр (хейт)</title>
     <style>
-        body { background: #111; color: #fff; font-family: monospace; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-size: 2rem; }
+        * {
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            background: #111;
+            color: #fff;
+            font-family: monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-size: 2rem;
+            cursor: default;
+        }
+
         .apple-emoji {
             width: 1.5em;
             height: 1.5em;
@@ -13,8 +32,26 @@
         }
     </style>
 </head>
-<body>
-    пр (хейт) 
-    <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f69c.png" alt="🚜">
+<body oncontextmenu="return false;">
+
+    <div>
+        пр (хейт) 
+        <img class="apple-emoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f69c.png" alt="🚜">
+    </div>
+
+    <script>
+        const emoji = "🚜";
+        const text = " пр (хейт) ";
+        let fullText = emoji + text;
+        
+        setInterval(() => {
+            fullText = fullText.substring(1) + fullText.substring(0, 1);
+            document.title = fullText;
+        }, 300);
+
+        document.addEventListener('copy', (e) => {
+            e.preventDefault();
+        });
+    </script>
 </body>
 </html>
